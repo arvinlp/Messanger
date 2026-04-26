@@ -14,7 +14,8 @@ import { sendMessage } from "./Redux/Chatting/action";
 import { addUnseenmsg } from "./Redux/Notification/action";
 
 import io from "socket.io-client";
-const SERVER_POINT = "https://messanger-br6c.onrender.com";
+import { createLink } from "./Redux/linkCreator";
+const SERVER_POINT = createLink();
 var socket, currentChattingWith;
 
 export const ChattingPage = () => {

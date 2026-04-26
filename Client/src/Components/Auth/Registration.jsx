@@ -12,8 +12,12 @@ export const RegisterComp = () => {
   const [regData, setRegData] = useState({
     pic: "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg",
     isAdmin: false,
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
+    mobile: "",
+    name: "",
+    username: "",
     password: "",
   });
   const dispatch = useDispatch();
@@ -32,7 +36,7 @@ export const RegisterComp = () => {
     reader.readAsDataURL(file);
   };
   const handleSubmit = () => {
-    const url = "https://messanger-br6c.onrender.com/auth";
+    const url = createLink(`auth`);
     if (user.pic) regData["pic"] = user.pic;
     dispatch(authRegister(url, regData));
   };
@@ -53,11 +57,23 @@ export const RegisterComp = () => {
           <p className="profile-text">Choose Profile</p>
         </div>
         <div className="details-cont">
-          <p>Name</p>
+          <p>First Name</p>
+          <input onChange={handleChange} name="firstName" className="inputcom" />
+
+          <p>Last Name</p>
+          <input onChange={handleChange} name="lastName" className="inputcom" />
+
+          <p>NickName</p>
           <input onChange={handleChange} name="name" className="inputcom" />
 
           <p>Email</p>
           <input onChange={handleChange} name="email" className="inputcom" />
+
+          <p>Mobile</p>
+          <input onChange={handleChange} name="mobile" className="inputcom" />
+
+          <p>Username</p>
+          <input onChange={handleChange} name="username" className="inputcom" />
 
           <p>Password</p>
           <input

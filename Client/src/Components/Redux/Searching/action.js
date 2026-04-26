@@ -1,3 +1,4 @@
+import { createLink } from '../linkCreator';
 export const SEARCH_LOADING = "SEARCH_LOADING";
 export const SEARCH_ERROR = "SEARCH_ERROR";
 export const SEARCH_RESULT = "SEARCH_RESULT";
@@ -9,7 +10,7 @@ export const searchResult = (payload) => ({ type: SEARCH_RESULT, payload });
 export const makeSearchApi = (search) => async (dispatch) => {
   searhcLoding(true);
   const user = JSON.parse(localStorage.getItem("userInfo")) || {};
-  const url = `https://messanger-br6c.onrender.com/auth?search=${search}`;
+  const url = createLink(`auth?search=${search}`);
   try {
     let res = await fetch(url, {
       method: "get",

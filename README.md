@@ -5,3 +5,5 @@ And to make unidirectional i used Redux for making any api call and state manage
 
 This project is clone of this repo yashrajillusion/Messanger.
 But I have added some features and fixed some bugs and also added some new features like profile upload and notification and also added some new UI/UX
+
+# Installation

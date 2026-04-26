@@ -11,7 +11,7 @@ import { authRegister } from "../Redux/Auth/action";
 export const LoginComp = () => {
   const { user, loading, error } = useSelector((store) => store.user);
   const [regData, setRegData] = useState({
-    email: "albert@gmail.com",
+    mobile: "09000000000",
     password: "albert",
   });
   const dispatch = useDispatch();
@@ -21,7 +21,7 @@ export const LoginComp = () => {
   };
 
   const handleSubmit = () => {
-    const url = "https://messanger-br6c.onrender.com/auth/login";
+    const url = createLink(`auth/login`);
     dispatch(authRegister(url, regData));
   };
   if (user._id) {
@@ -33,8 +33,8 @@ export const LoginComp = () => {
         <h2 className="auth-heading">Welcome back!</h2>
 
         <div className="details-cont">
-          <p>Email</p>
-          <input name="email" onChange={handleChange} className="inputcom" />
+          <p>Mobile</p>
+          <input name="mobile" onChange={handleChange} className="inputcom" />
 
           <p>Password</p>
           <input
